@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>COG Qatar | Connect &bull; Worship &bull; Grow</title>
+<meta name="description" content="Connect with COG Qatar, discover upcoming church activities, worship, fellowship, youth gatherings and opportunities to grow in faith." />
+<meta name="theme-color" content="#0B1120" />
+<meta name="author" content="Media Team, COG Qatar" />
+<link rel="canonical" href="https://cogqatar.org/" />
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="COG Qatar" />
+<meta property="og:title" content="COG Qatar | Connect &bull; Worship &bull; Grow" />
+<meta property="og:description" content="You came for the Wi-Fi. Maybe God had something more in mind. Discover worship, fellowship, youth gatherings and ways to grow in faith at COG Qatar." />
+<meta property="og:url" content="https://cogqatar.org/" />
+<!-- Drop a 1200x630 image named og-image.jpg beside index.html to enable rich link previews -->
+<meta property="og:image" content="og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230B1120'/><path d='M50 22v56M32 42h36' stroke='%23E0B35C' stroke-width='9' stroke-linecap='round'/></svg>" />
+
+<!-- Fonts: one display serif + one UI sans, two weights each -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:   { DEFAULT: '#0B1120', soft: '#131C2F' },
+          cream: { DEFAULT: '#FBF8F3', deep: '#F3EDE3' },
+          gold:  { DEFAULT: '#C8963E', light: '#E0B35C', pale: '#F0DDBB' }
+        },
+        fontFamily: {
+          display: ['Fraunces', 'Georgia', 'serif'],
+          sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif']
+        },
+        maxWidth: { content: '68rem' }
+      }
+    }
+  };
+</script>
+
+<style>
+  :root { color-scheme: light; }
+  body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+  /* Hero entrance */
+  @keyframes rise { from { opacity: 0; transform: translate3d(0, 18px, 0); } to { opacity: 1; transform: none; } }
+  .rise { opacity: 0; animation: rise .9s cubic-bezier(.22,.61,.36,1) forwards; }
+  .d1 { animation-delay: .05s } .d2 { animation-delay: .18s }
+  .d3 { animation-delay: .31s } .d4 { animation-delay: .44s } .d5 { animation-delay: .57s }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translate3d(0, 24px, 0);
+            transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* Slow ambient glow movement */
+  @keyframes drift {
+    0%, 100% { transform: translate3d(0,0,0) scale(1); }
+    50%      { transform: translate3d(0,-4%,0) scale(1.08); }
+  }
+  .drift { animation: drift 18s ease-in-out infinite; }
+
+  /* "Connected" status pulse */
+  @keyframes pulse-ring {
+    0%  { transform: scale(.8); opacity: .7 }
+    75% { transform: scale(2.4); opacity: 0 }
+    100%{ transform: scale(2.4); opacity: 0 }
+  }
+  .pulse-ring { animation: pulse-ring 2.6s cubic-bezier(.25,.6,.35,1) infinite; }
+
+  /* Rotating message crossfade */
+  .rotator { transition: opacity .5s ease, transform .5s ease; }
+  .rotator.out { opacity: 0; transform: translate3d(0, -8px, 0); }
+
+  /* Barely-there dot texture */
+  .dots {
+    background-image: radial-gradient(rgba(11,17,32,.07) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise, .drift, .pulse-ring { animation: none !important; opacity: 1 !important; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+
+<body class="bg-cream font-sans text-ink antialiased selection:bg-gold/25">
+
+<a href="#while" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-ink focus:px-5 focus:py-2 focus:text-sm focus:text-cream">Skip to content</a>
+
+<!-- ============================== HERO ============================== -->
+<header class="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-ink">
+
+  <!-- ambient gradient atmosphere (no images: always renders) -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+    <div class="drift absolute -left-24 -top-32 h-[26rem] w-[26rem] rounded-full bg-gold/20 blur-[90px] sm:h-[34rem] sm:w-[34rem]"></div>
+    <div class="drift absolute -right-28 top-1/3 h-[22rem] w-[22rem] rounded-full bg-indigo-400/15 blur-[100px] sm:h-[30rem] sm:w-[30rem]" style="animation-delay:-7s"></div>
+    <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-cream/90"></div>
+  </div>
+
+  <!-- top bar -->
+  <nav class="rise d1 mx-auto flex w-full max-w-content items-center justify-between px-5 pt-6 sm:px-8" aria-label="Primary">
+    <span class="flex items-center gap-2.5 text-cream">
+      <span class="grid h-8 w-8 place-items-center rounded-lg bg-gold/15 ring-1 ring-gold/30" aria-hidden="true">
+        <svg class="h-4 w-4 text-gold-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M7 8h10"/></svg>
+      </span>
+      <span class="text-sm font-semibold tracking-[0.18em]">COG QATAR</span>
+    </span>
+    <a href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer"
+       class="group hidden items-center gap-1.5 text-sm font-medium text-cream/70 transition hover:text-gold-light sm:inline-flex">
+      cogqatar.org
+      <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+    </a>
+  </nav>
+
+  <!-- hero content -->
+  <div class="mx-auto flex w-full max-w-content flex-1 flex-col justify-center px-5 py-10 sm:px-8 sm:py-16">
+
+    <!-- connection indicator -->
+    <p class="rise d1 inline-flex w-fit items-center gap-2.5 rounded-full border border-gold/25 bg-white/5 py-1.5 pl-2 pr-4 backdrop-blur-sm">
+      <span class="relative grid h-5 w-5 place-items-center" aria-hidden="true">
+        <span class="pulse-ring absolute inline-block h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+        <span class="relative inline-block h-2 w-2 rounded-full bg-emerald-400"></span>
+      </span>
+      <span class="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-cream/85">Connected &nbsp;&#10003;</span>
+    </p>
+
+    <p class="rise d2 mt-7 text-base text-cream/60 sm:text-lg">You&rsquo;re on the church Wi-Fi. Welcome&nbsp;&#128075;</p>
+
+    <!--
+      Headline is picked at random on every page load.
+      To add, remove or reword one, edit the HEADLINES array in the script just below.
+      The markup here is the no-JS fallback.
+    -->
+    <h1 class="rise d3 mt-3 font-display text-[2.6rem] leading-[1.02] tracking-[-0.02em] text-cream sm:text-6xl lg:text-7xl">
+      <span id="headline-top">The only connection</span><br />
+      <span id="headline-accent" class="bg-gradient-to-r from-gold-light via-gold-pale to-gold-light bg-clip-text text-transparent">you really need is God.</span>
+    </h1>
+    <script>
+      /* Rotate the hero headline on each visit. First line plain, second line gold. */
+      (function () {
+        var HEADLINES = [
+          ['The only connection',   'you really need is God.'],
+          ['Good Wi-Fi.',           'Better connection.'],
+          ['Connected to Wi-Fi.',   'Connected to God.'],
+          ['More than Wi-Fi.',      'A place to belong.'],
+          ['You found the Wi-Fi.',  'Now find your community.'],
+          ['Stay connected.',       'Stay rooted.'],
+          ['Connect here.',         'Grow here. Belong here.'],
+          ['A stronger connection', 'starts here.'],
+          ['You’re connected.', 'Now come closer.'],
+          ['The best connection',   'goes beyond Wi-Fi.']
+        ];
+        var pick = HEADLINES[Math.floor(Math.random() * HEADLINES.length)];
+        document.getElementById('headline-top').textContent = pick[0];
+        document.getElementById('headline-accent').textContent = pick[1];
+      })();
+    </script>
+
+    <p class="rise d4 mt-6 max-w-xl text-lg leading-relaxed text-cream/70 sm:text-xl">
+      You came for the Wi-Fi. Maybe God had something more in mind.
+    </p>
+
+    <div class="rise d5 mt-9 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+      <a href="#while"
+         class="group inline-flex min-h-[3.25rem] items-center justify-center gap-2 rounded-full bg-gold px-8 text-base font-semibold text-ink shadow-lg shadow-gold/25 transition duration-300 hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-xl hover:shadow-gold/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-light">
+        See what&rsquo;s happening
+        <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+      <a href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer"
+         class="inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-cream/20 px-8 text-base font-medium text-cream/85 transition duration-300 hover:border-gold/50 hover:text-gold-light">
+        Know more
+      </a>
+    </div>
+  </div>
+
+  <div class="rise d5 relative z-10 pb-7 text-center" aria-hidden="true">
+    <span class="text-[0.65rem] font-medium uppercase tracking-[0.3em] text-cream/35">Scroll</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ========================= WHILE YOU'RE HERE ========================= -->
+<section id="while" class="bg-cream px-5 py-20 sm:px-8 sm:py-24">
+  <div class="mx-auto max-w-content">
+    <div class="reveal max-w-2xl">
+      <p class="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-gold">While you&rsquo;re here&hellip;</p>
+      <h2 class="mt-4 font-display text-3xl leading-tight tracking-[-0.015em] sm:text-4xl">
+        Take a moment to discover what&rsquo;s happening at church.
+      </h2>
+      <p class="mt-4 text-lg leading-relaxed text-ink/60">
+        A community where you can worship, connect and grow &mdash; whatever brought you through the door today.
+      </p>
+    </div>
+
+    <!-- Quick links. Replace each href with a real page/WhatsApp/Maps link when available. -->
+    <ul class="reveal mt-10 flex flex-wrap gap-2.5 sm:gap-3">
+      <li><a href="#worship"    class="inline-flex min-h-[2.75rem] items-center rounded-full border border-ink/10 bg-white px-5 text-sm font-medium shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold hover:shadow-md">Join Us for Worship</a></li>
+      <li><a href="#youth"      class="inline-flex min-h-[2.75rem] items-center rounded-full border border-ink/10 bg-white px-5 text-sm font-medium shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold hover:shadow-md">Youth &amp; Young Adults</a></li>
+      <li><a href="#serving"    class="inline-flex min-h-[2.75rem] items-center rounded-full border border-ink/10 bg-white px-5 text-sm font-medium shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold hover:shadow-md">Church Activities</a></li>
+      <li><a href="#bible"      class="inline-flex min-h-[2.75rem] items-center rounded-full border border-ink/10 bg-white px-5 text-sm font-medium shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold hover:shadow-md">Bible Study</a></li>
+      <li><a href="#fellowship" class="inline-flex min-h-[2.75rem] items-center rounded-full border border-ink/10 bg-white px-5 text-sm font-medium shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold hover:shadow-md">Fellowship</a></li>
+      <li><a href="#prayer"     class="inline-flex min-h-[2.75rem] items-center rounded-full border border-ink/10 bg-white px-5 text-sm font-medium shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-gold/60 hover:text-gold hover:shadow-md">Prayer</a></li>
+      <li><a href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[2.75rem] items-center gap-1.5 rounded-full border border-ink/10 bg-ink px-5 text-sm font-medium text-cream shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-ink-soft hover:shadow-md">Upcoming Meetings <span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======================= ROTATING INSPIRATION ======================= -->
+<section class="relative isolate overflow-hidden bg-ink-soft px-5 py-20 sm:px-8 sm:py-24" aria-labelledby="inspire-title">
+  <div aria-hidden="true" class="drift pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/10 blur-[80px]"></div>
+  <h2 id="inspire-title" class="sr-only">A word for today</h2>
+  <div class="mx-auto max-w-3xl text-center">
+    <p id="rotator" class="rotator font-display text-2xl leading-snug text-cream sm:text-4xl sm:leading-tight" aria-live="polite">
+      There&rsquo;s always a place for you here.
+    </p>
+    <div class="mt-9 flex items-center justify-center gap-2" id="rotator-dots" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ========================== FIND YOUR PLACE ========================== -->
+<section class="dots bg-cream-deep px-5 py-20 sm:px-8 sm:py-24" aria-labelledby="place-title">
+  <div class="mx-auto max-w-content">
+    <div class="reveal max-w-2xl">
+      <p class="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-gold">Find your place</p>
+      <h2 id="place-title" class="mt-4 font-display text-3xl leading-tight tracking-[-0.015em] sm:text-4xl">
+        Six ways to belong here.
+      </h2>
+    </div>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+
+      <!-- Worship -->
+      <a id="worship" href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer" class="reveal group block scroll-mt-24 rounded-3xl border border-ink/[0.07] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-xl hover:shadow-ink/5">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gold/10 text-gold transition duration-300 group-hover:bg-gold group-hover:text-white" aria-hidden="true">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-xl">Worship</h3>
+        <p class="mt-2 leading-relaxed text-ink/60">Come together. Sing together. Worship together.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold opacity-0 transition duration-300 group-hover:opacity-100">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <!-- Youth -->
+      <a id="youth" href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer" class="reveal group block scroll-mt-24 rounded-3xl border border-ink/[0.07] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-xl hover:shadow-ink/5" style="transition-delay:.07s">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gold/10 text-gold transition duration-300 group-hover:bg-gold group-hover:text-white" aria-hidden="true">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13A4 4 0 0 1 16 11"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-xl">Youth &amp; Young Adults</h3>
+        <p class="mt-2 leading-relaxed text-ink/60">Faith, friendships, real conversations and a place to belong.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold opacity-0 transition duration-300 group-hover:opacity-100">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <!-- Bible Study -->
+      <a id="bible" href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer" class="reveal group block scroll-mt-24 rounded-3xl border border-ink/[0.07] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-xl hover:shadow-ink/5" style="transition-delay:.14s">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gold/10 text-gold transition duration-300 group-hover:bg-gold group-hover:text-white" aria-hidden="true">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-xl">Bible Study</h3>
+        <p class="mt-2 leading-relaxed text-ink/60">Explore God&rsquo;s Word and grow deeper in faith.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold opacity-0 transition duration-300 group-hover:opacity-100">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <!-- Prayer -->
+      <a id="prayer" href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer" class="reveal group block scroll-mt-24 rounded-3xl border border-ink/[0.07] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-xl hover:shadow-ink/5">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gold/10 text-gold transition duration-300 group-hover:bg-gold group-hover:text-white" aria-hidden="true">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-xl">Prayer</h3>
+        <p class="mt-2 leading-relaxed text-ink/60">Pause. Pray. Trust.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold opacity-0 transition duration-300 group-hover:opacity-100">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <!-- Fellowship -->
+      <a id="fellowship" href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer" class="reveal group block scroll-mt-24 rounded-3xl border border-ink/[0.07] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-xl hover:shadow-ink/5" style="transition-delay:.07s">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gold/10 text-gold transition duration-300 group-hover:bg-gold group-hover:text-white" aria-hidden="true">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-xl">Fellowship</h3>
+        <p class="mt-2 leading-relaxed text-ink/60">Meet people. Build friendships. Do life together.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold opacity-0 transition duration-300 group-hover:opacity-100">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+
+      <!-- Serving -->
+      <a id="serving" href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer" class="reveal group block scroll-mt-24 rounded-3xl border border-ink/[0.07] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-xl hover:shadow-ink/5" style="transition-delay:.14s">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gold/10 text-gold transition duration-300 group-hover:bg-gold group-hover:text-white" aria-hidden="true">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg>
+        </span>
+        <h3 class="mt-5 font-display text-xl">Serving</h3>
+        <p class="mt-2 leading-relaxed text-ink/60">Use your gifts. Make a difference.</p>
+        <span class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-gold opacity-0 transition duration-300 group-hover:opacity-100">Learn more <span aria-hidden="true">&rarr;</span></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================== FEATURED VERSE =========================== -->
+<section class="bg-cream px-5 py-24 sm:px-8 sm:py-32" aria-labelledby="verse-title">
+  <figure class="reveal mx-auto max-w-3xl text-center">
+    <h2 id="verse-title" class="sr-only">Featured verse</h2>
+    <svg class="mx-auto h-7 w-7 text-gold/50" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.17 6A5.17 5.17 0 0 0 2 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 0 1 7.17 9.5V6Zm11 0A5.17 5.17 0 0 0 13 11.17V18h6.83v-6.83H16.5A1.67 1.67 0 0 1 18.17 9.5V6Z"/></svg>
+    <blockquote class="mt-8">
+      <p class="font-display text-[1.75rem] leading-[1.25] tracking-[-0.015em] sm:text-5xl sm:leading-[1.15]">
+        &ldquo;Draw near to God, and He will draw near to you.&rdquo;
+      </p>
+    </blockquote>
+    <figcaption class="mt-8 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-ink/45">James 4:8</figcaption>
+  </figure>
+</section>
+
+<!-- ============================= INVITATION ============================= -->
+<section class="relative isolate overflow-hidden bg-ink px-5 py-24 sm:px-8 sm:py-32" aria-labelledby="invite-title">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
+    <div class="drift absolute -bottom-32 left-1/2 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-gold/20 blur-[100px]"></div>
+  </div>
+  <div class="reveal mx-auto max-w-2xl text-center">
+    <h2 id="invite-title" class="font-display text-4xl leading-tight tracking-[-0.02em] text-cream sm:text-6xl">
+      You&rsquo;re welcome here.
+    </h2>
+    <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-cream/65 sm:text-xl">
+      Whether you&rsquo;ve been coming for years or this is your first time, there&rsquo;s a place for you.
+    </p>
+    <a href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer"
+       class="group mt-10 inline-flex min-h-[3.5rem] items-center justify-center gap-2.5 rounded-full bg-gold px-10 text-base font-semibold text-ink shadow-xl shadow-gold/25 transition duration-300 hover:-translate-y-0.5 hover:bg-gold-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-light">
+      Discover More
+      <span class="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
+    </a>
+    <p class="mt-5 text-sm text-cream/40">cogqatar.org</p>
+  </div>
+</section>
+
+</main>
+
+<!-- =============================== FOOTER =============================== -->
+<footer class="bg-ink-soft px-5 py-12 sm:px-8">
+  <div class="mx-auto flex max-w-content flex-col items-center gap-5 text-center sm:flex-row sm:justify-between sm:text-left">
+    <div>
+      <p class="font-display text-lg text-cream">COG Qatar</p>
+      <p class="mt-1 text-sm tracking-wide text-cream/50">Worship &bull; Connect &bull; Grow</p>
+    </div>
+    <a href="https://cogqatar.org/" target="_blank" rel="noopener noreferrer"
+       class="text-sm font-medium text-gold-light underline decoration-gold/30 decoration-1 underline-offset-4 transition hover:decoration-gold">
+      cogqatar.org
+    </a>
+  </div>
+  <p class="mx-auto mt-8 max-w-content border-t border-cream/10 pt-6 text-center text-xs text-cream/35 sm:text-left">
+    &copy; <span id="year">2026</span> Media Team, COG Qatar
+  </p>
+</footer>
+
+<script>
+  // Scroll reveal ---------------------------------------------------------
+  (function () {
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(items, function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+    Array.prototype.forEach.call(items, function (el) { io.observe(el); });
+  })();
+
+  // Rotating inspirational messages ---------------------------------------
+  (function () {
+    var lines = [
+      'There’s always a place for you here.',
+      'Come as you are. Grow together.',
+      'Faith grows stronger when we grow together.',
+      'You were never meant to walk alone.',
+      'Take a break from the noise. Make room for God.',
+      'Church is more than a place. It’s a community.'
+    ];
+    var el = document.getElementById('rotator');
+    var wrap = document.getElementById('rotator-dots');
+    if (!el || !wrap) return;
+
+    function dotClass(active) {
+      return 'h-1.5 rounded-full transition-all duration-500 ' + (active ? 'w-6 bg-gold' : 'w-1.5 bg-cream/25');
+    }
+
+    // Start on a random message so repeat visitors see something new.
+    var i = Math.floor(Math.random() * lines.length);
+    el.textContent = lines[i];
+
+    var dots = lines.map(function (_, n) {
+      var d = document.createElement('span');
+      d.className = dotClass(n === i);
+      wrap.appendChild(d);
+      return d;
+    });
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    setInterval(function () {
+      el.classList.add('out');
+      setTimeout(function () {
+        i = (i + 1) % lines.length;
+        el.textContent = lines[i];
+        el.classList.remove('out');
+        dots.forEach(function (d, n) { d.className = dotClass(n === i); });
+      }, 500);
+    }, 5000);
+  })();
+
+  // Current year ----------------------------------------------------------
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
